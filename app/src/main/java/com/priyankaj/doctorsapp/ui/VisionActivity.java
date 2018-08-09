@@ -33,6 +33,7 @@ public class VisionActivity extends AppCompatActivity implements DoctorAppContra
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vision);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
         View view = LayoutInflater.from(this).inflate(R.layout.abs_layout,null);
         TextView txtName = view.findViewById(R.id.mytext);
         txtName.setText("Vision");

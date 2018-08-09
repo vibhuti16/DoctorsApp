@@ -34,6 +34,7 @@ public class CityListActivity extends AppCompatActivity implements  CityAdapter.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
         View view = LayoutInflater.from(this).inflate(R.layout.abs_layout,null);
         TextView txtName = view.findViewById(R.id.mytext);
         txtName.setText("City");

@@ -44,6 +44,7 @@ public class DoctorListActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main2);
 
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
         View view = LayoutInflater.from(this).inflate(R.layout.abs_layout,null);
         TextView txtName = view.findViewById(R.id.mytext);
         txtName.setText("Doctor");
