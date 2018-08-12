@@ -4,17 +4,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.transition.Explode;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.Window;
-import android.widget.TextView;
 
 import com.priyankaj.doctorsapp.R;
 import com.priyankaj.doctorsapp.adapter.DoctorDetailsAdapter;
@@ -43,12 +41,8 @@ public class DoctorListActivity extends AppCompatActivity{
         }
         setContentView(R.layout.activity_main2);
 
-        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
-        View view = LayoutInflater.from(this).inflate(R.layout.abs_layout,null);
-        TextView txtName = view.findViewById(R.id.mytext);
-        txtName.setText("Doctor");
-        getSupportActionBar().setCustomView(view);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         myOnClickListener = new MyOnClickListener(this);
 
         recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);

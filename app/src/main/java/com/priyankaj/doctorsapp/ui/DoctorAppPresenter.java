@@ -55,8 +55,14 @@ public class DoctorAppPresenter implements DoctorAppContract.Presenter {
                 @Override
                 public void onResponse(Call<CategoryDetails> call, Response<CategoryDetails> response) {
                     int statusCode = response.code();
-                    ArrayList<CategoryDetails.Category> strresponse = response.body().getCategory();
-                    mView.displayCategoryDetails(strresponse);
+                    if(response.body()!=null){
+                        ArrayList<CategoryDetails.Category> strresponse = response.body().getCategory();
+                        mView.displayCategoryDetails(strresponse);
+                    }else
+                    {
+                        mView.fetchDataFailure(context.getResources().getString(R.string.category_error_message));
+                    }
+
                 }
 
                 @Override
@@ -77,7 +83,12 @@ public class DoctorAppPresenter implements DoctorAppContract.Presenter {
             service.getVisionDetails().enqueue(new Callback<VisionDetails>() {
                 @Override
                 public void onResponse(Call<VisionDetails> call, Response<VisionDetails> response) {
-                    mView.displayVisionDetails(response.body().getVision());
+                    if(response!=null && response.body()!=null){
+                        mView.displayVisionDetails(response.body().getVision());
+                    }else
+                    {
+                        mView.fetchDataFailure(context.getResources().getString(R.string.vision_error_message));
+                    }
                 }
 
                 @Override
@@ -97,7 +108,12 @@ public class DoctorAppPresenter implements DoctorAppContract.Presenter {
             service.getAboutDetails().enqueue(new Callback<AboutDetails>() {
                 @Override
                 public void onResponse(Call<AboutDetails> call, Response<AboutDetails> response) {
-                    mView.displayAboutDetails(response.body().getAboutUs());
+                    if(response.body()!=null) {
+                        mView.displayAboutDetails(response.body().getAboutUs());
+                    }else
+                    {
+                        mView.fetchDataFailure(context.getResources().getString(R.string.about_error_message));
+                    }
                 }
 
                 @Override
@@ -118,7 +134,12 @@ public class DoctorAppPresenter implements DoctorAppContract.Presenter {
             service.getDoctorDetails().enqueue(new Callback<DoctorDetails>() {
                 @Override
                 public void onResponse(Call<DoctorDetails> call, Response<DoctorDetails> response) {
-                    mView.displayDoctorDetails(response.body().getDoctors());
+                    if(response.body()!=null) {
+                        mView.displayDoctorDetails(response.body().getDoctors());
+                    }else
+                    {
+                        mView.fetchDataFailure(context.getResources().getString(R.string.doctor_error_message));
+                    }
                 }
 
                 @Override
@@ -144,7 +165,12 @@ public class DoctorAppPresenter implements DoctorAppContract.Presenter {
                     appointmentDetailsRequest.getDoctorId()).enqueue(new Callback<String>() {
                 @Override
                 public void onResponse(Call<String> call, Response<String> response) {
-                    mView.showformDisplaySuccess(response.body().toString());
+                    if(response.body()!=null) {
+                        mView.showformDisplaySuccess(response.body().toString());
+                    }else
+                    {
+                        mView.showformDisplayFaliure(context.getResources().getString(R.string.send_appointment_details_error_message));
+                    }
                 }
 
                 @Override
@@ -164,7 +190,12 @@ public class DoctorAppPresenter implements DoctorAppContract.Presenter {
         service.getCityDetails().enqueue(new Callback<CityDetails>() {
             @Override
             public void onResponse(Call<CityDetails> call, Response<CityDetails> response) {
-                mView.displayCityDetails(response.body().getCity());
+                if(response.body()!=null){
+                    mView.displayCityDetails(response.body().getCity());
+                }else
+                {
+                    mView.fetchDataFailure(context.getResources().getString(R.string.city_details_error_message));
+                }
             }
 
             @Override

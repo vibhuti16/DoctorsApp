@@ -16,9 +16,6 @@
     </style>
 
 
-
-
-
     <style name="myTheme" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">#ff80ab</item>
         <item name="colorPrimaryDark">#ff6e9f</item>
@@ -28,15 +25,15 @@
     </style>
 
 
-
-
     <style name="myTheme.ActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:background">#c6c4c4</item>
         <item name="android:titleTextStyle">@style/myTheme.ActionBar.Text</item>
     </style>
+
     <style name="myTheme.ActionBar.Text" parent="@android:style/TextAppearance">
         <item name="android:textColor">#00E5FF</item>
     </style>
+
     <style name="AppTheme.Button" parent="Widget.AppCompat.Button.Borderless">
 
     </style>
@@ -50,4 +47,8 @@
         <item name="android:layout_height">1dp</item>
         <item name="android:background">?android:attr/listDivider</item>
     </style>
+
+    <style name="myTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="myTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

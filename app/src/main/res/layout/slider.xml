@@ -22,18 +22,18 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="190dp"
-            android:src="@drawable/doc"
+            android:src="@drawable/cover_page"
             android:id="@+id/i1" />
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="190dp"
-            android:src="@drawable/aaa"
+            android:src="@drawable/cover_page"
             android:id="@+id/i2"/>
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="190dp"
-            android:src="@drawable/ccc"
+            android:src="@drawable/cover_page"
             android:id="@+id/i3"/>
         <ImageView
             android:layout_width="match_parent"

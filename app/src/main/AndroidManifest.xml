@@ -3,7 +3,7 @@
     package="com.priyankaj.doctorsapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <!--
@@ -20,36 +20,56 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/myTheme">
-        <activity android:name=".ui.CatergoryActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.DoctorListActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.Details"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.DoctorDetailsActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.Slider"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.SplashScreenActivity"
+        <activity
+            android:name=".ui.CatergoryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/myTheme.NoActionBar"
+            android:label="Categories"/>
+        <activity
+            android:name=".ui.DoctorListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/myTheme.NoActionBar"
+            android:label="Doctors"/>
+        <activity
+            android:name=".ui.Details"
+            android:screenOrientation="portrait"
+            android:theme="@style/myTheme.NoActionBar"/>
+        <activity
+            android:name=".ui.DoctorDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/myTheme.NoActionBar"
+            />
+        <activity
+            android:name=".ui.Slider"
+            android:screenOrientation="portrait"
+            android:theme="@style/myTheme.NoActionBar"/>
+        <activity
+            android:name=".ui.SplashScreenActivity"
             android:screenOrientation="portrait"
             android:theme="@style/myTheme.NoActionBar">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.AboutActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/myTheme.NoActionBar"
+            android:label="About"/>
         <activity
             android:name=".ui.VisionActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/myTheme.NoActionBar"
+            android:label="Vision"/>
         <activity
             android:name=".ui.CityListActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/myTheme.NoActionBar"
+            android:label="Cities"/>
 
-        <!--Added these two Services -->
+        <!-- Added these two Services -->
         <service
             android:name=".notifications.MyFirebaseMessagingService"
             android:enabled="true"

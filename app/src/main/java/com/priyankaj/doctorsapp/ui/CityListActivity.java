@@ -2,16 +2,13 @@ package com.priyankaj.doctorsapp.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
-import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.View;
-import android.widget.TextView;
 
 import com.priyankaj.doctorsapp.R;
 import com.priyankaj.doctorsapp.adapter.CityAdapter;
@@ -33,12 +30,8 @@ public class CityListActivity extends AppCompatActivity implements  CityAdapter.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
-        View view = LayoutInflater.from(this).inflate(R.layout.abs_layout,null);
-        TextView txtName = view.findViewById(R.id.mytext);
-        txtName.setText("City");
-        getSupportActionBar().setCustomView(view);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         recyclerView.setHasFixedSize(true);
 

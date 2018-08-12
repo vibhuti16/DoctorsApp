@@ -30,6 +30,8 @@ private Doctors doctor;
 
 
 
+
+
         if(getIntent().hasExtra("doctor")){
             doctor = getIntent().getParcelableExtra("doctor");
         }
